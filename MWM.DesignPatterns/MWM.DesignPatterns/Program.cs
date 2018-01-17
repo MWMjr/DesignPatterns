@@ -10,6 +10,8 @@ namespace MWM.DesignPatterns
     {
         static void Main(string[] args)
         {
+            MWM.DesignPatterns.FactoryPattern.Main fp = new FactoryPattern.Main();
+            fp.Run();
         }
     }
 }
