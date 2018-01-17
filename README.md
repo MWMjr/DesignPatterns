@@ -5,11 +5,15 @@ These are the patterns that create objects, rather than being instantiated direc
 #### Abstract Factory Pattern
 #### Builder
 #### Factory Pattern
-**Purpose**
-Consumers of the factory can get a THING of a certain type without having to know about the dependencies of the THING.  The only thing that comes from the consumer is something that identifies the type of the THING that needs to be created (i.e. a string or enum).
-**When to Use**
-Client knows  to create an object of the required functionality, but the type of the object will remain undecided or it will be decided by dyanmic parameters being passed.
-**How is this different from the Abstract Facotry Pattern**
+*Purpose*  
+Consumers of the factory can get a THING of a certain type without having to know about the dependencies of the THING.  The only thing that comes from the consumer is something that identifies the type of the THING that needs to be created (i.e. a string or enum).  
+
+*When to Use*  
+Client knows  to create an object of the required functionality, but the type of the object will remain undecided or it will be decided by dyanmic parameters being passed.  
+
+*How is this different from the Abstract Factory Pattern*  
+Enter text here.  
+
 #### Prototype
 #### Singleton
 ## Structural Patterns
