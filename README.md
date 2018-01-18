@@ -38,3 +38,5 @@ These patterns are conerned with communication between objects.
 #### Strategy
 #### Template Method
 #### Visitor
+## Other Patterns
+#### Specification
