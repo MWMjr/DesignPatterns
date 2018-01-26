@@ -41,8 +41,9 @@ namespace MWM.DesignPatterns.Builder
             Console.WriteLine(sb);
 
             var builder = new HtmlBuilder("ul");
-            builder.AddChild("li", "Hello");
-            builder.AddChild("li", "World");
+            //Fluent Builder - AddChild method returns an HtmlBuilder, which allows us to chain the AddChild methods
+
+            builder.AddChild("li", "Hello").AddChild("li", "World");            
             Console.WriteLine(builder.ToString());
         }
     }
