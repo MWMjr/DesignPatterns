@@ -5,7 +5,7 @@ These are the patterns that create objects, rather than being instantiated direc
 #### Abstract Factory Pattern
 #### Builder
 *Purpose*
-simplfies the construction of an object into multiple steps
+Simplifies the construction of an object into multiple steps
 
 *When to use*
 An object requires a lot of ceremony to properly create.  Reduces the necessity of having a constructor with a ton of arguments.
@@ -21,6 +21,12 @@ Enter text here.
 
 #### Prototype
 #### Singleton
+*Purpose*
+Ensure that a component is created only once
+
+*When to use*
+When it doesn't make any sense for multiple copies of a class to exist.  For instance, a class that creates objects, or a class that represents a database connection or repository.
+
 ## Structural Patterns
 These are the patterns that define new ways to compose objects for new functionality.
 #### Adapter
