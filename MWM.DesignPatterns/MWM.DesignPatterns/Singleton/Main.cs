@@ -1,4 +1,5 @@
 ﻿using MoreLinq;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace MWM.DesignPatterns.Singleton
      
     public interface IDatabase
     {
-        int GetPopulation(string name)
+        int GetPopulation(string name);
     }
     
 
@@ -55,8 +56,12 @@ namespace MWM.DesignPatterns.Singleton
     public class SingletonDatabase : IDatabase
     {
         private Dictionary<string, int> capitals;
+        private static int instanceCount;
+        public static int Count => instanceCount;
+
         private SingletonDatabase()
         {
+            instanceCount++;
             Console.WriteLine("Initializing database");
 
             capitals = System.IO.File.ReadAllLines("capitals.txt")
@@ -77,9 +82,22 @@ namespace MWM.DesignPatterns.Singleton
         public static SingletonDatabase Instance => instance.Value;
     }
 
+    [TestFixture]
+    public class SingletonTest
+    {
+        [Test]
+        public void IsSingletonTest()
+        {
+            var db = SingletonDatabase.Instance;
+            var db2 = SingletonDatabase.Instance;
+            Assert.That(db, Is.SameAs(db2));
+            Assert.That(SingletonDatabase.Count, Is.EqualTo(1));
+        }
+    }
+
     static class Progranm
     {
-        static void Main(string[] args)
+        static void MainSingleton(string[] args)
         {
             var db = SingletonDatabase.Instance;
             var city = "Tokypo";
