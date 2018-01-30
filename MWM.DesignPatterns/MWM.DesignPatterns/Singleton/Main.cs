@@ -86,6 +86,28 @@ namespace MWM.DesignPatterns.Singleton
         public static SingletonDatabase Instance => instance.Value;
     }
 
+    public class OrdinaryDatabase : IDatabase
+    {
+        private Dictionary<string, int> capitals;
+
+        private OrdinaryDatabase()
+        {
+            Console.WriteLine("Initializing database");
+
+            capitals = System.IO.File.ReadAllLines(System.IO.Path.Combine(new System.IO.FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName + "..\\..\\..\\Singleton", "capitals.txt"))
+                   .Batch(2)
+                   .ToDictionary(
+                       list => list.ElementAt(0).Trim(),
+                       list => int.Parse(list.ElementAt(1))
+                   );
+        }
+
+        public int GetPopulation(string name)
+        {
+            return capitals[name];
+        }
+    }
+
     public class SingletonRecordFinder
     {
         public int GetTotalPopulation(IEnumerable<string> names)
@@ -94,6 +116,37 @@ namespace MWM.DesignPatterns.Singleton
             foreach (var name in names)
                 result += SingletonDatabase.Instance.GetPopulation(name);
             return result;
+        }
+    }
+
+    public class ConfigurableRecordFinder
+    {
+        private IDatabase database;
+
+        public ConfigurableRecordFinder(IDatabase database)
+        {
+            this.database = database ?? throw new ArgumentNullException(paramName: nameof(database)); ;
+        }
+
+        public int GetTotalPopulation(IEnumerable<string> names)
+        {
+            int result = 0;
+            foreach (var name in names)
+                result += database.GetPopulation(name);
+            return result;
+        }
+    }
+
+    public class DummyDatabase : IDatabase
+    {
+        public int GetPopulation(string name)
+        {
+            return new Dictionary<string, int>
+            {
+                ["alpha"] = 1,
+                ["beta"] = 2,
+                ["gamma"] = 3
+            }[name];
         }
     }
 
@@ -120,6 +173,29 @@ namespace MWM.DesignPatterns.Singleton
             // Problem here is that I cannot get a connection to a pretend database because the Singleton in effect has hard coded a reference to the database
             // It cannot be tested this way reliably
             Assert.AreEqual(tp, 17500000 + 17400000);
+        }
+
+        [TestMethod]
+        public void ConfigurablePopulationTest()
+        {
+            var rf = new ConfigurableRecordFinder(new DummyDatabase());
+            var names = new[] { "alpha", "gamma" };
+            int tp = rf.GetTotalPopulation(names);
+            Assert.AreEqual(tp, 4);
+        }
+
+        [TestMethod]
+        public void DIPopulationTest()
+        {
+            var cb = new ContainerBuilder();
+            //Tells DI container to give them the type implementation as a singleton
+            cb.RegisterType<OrdinaryDatabase>().As<IDatabase>().SingleInstance();
+            cb.RegisterType<ConfigurableRecordFinder>();
+            using (var c = cb.Build())
+            {
+                var rf = c.Resolve<ConfigurableRecordFinder>();
+
+            }
         }
 
     }
