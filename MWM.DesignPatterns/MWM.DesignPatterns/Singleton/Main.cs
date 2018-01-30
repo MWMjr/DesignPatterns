@@ -67,8 +67,8 @@ namespace MWM.DesignPatterns.Singleton
         {
             instanceCount++;
             Console.WriteLine("Initializing database");
-
-            capitals = System.IO.File.ReadAllLines(System.IO.Path.Combine(new System.IO.FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName, "capitals.txt"))
+       
+         capitals = System.IO.File.ReadAllLines(System.IO.Path.Combine(new System.IO.FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName + "..\\..\\..\\Singleton", "capitals.txt"))
                 .Batch(2)
                 .ToDictionary(
                     list => list.ElementAt(0).Trim(),
@@ -86,6 +86,17 @@ namespace MWM.DesignPatterns.Singleton
         public static SingletonDatabase Instance => instance.Value;
     }
 
+    public class SingletonRecordFinder
+    {
+        public int GetTotalPopulation(IEnumerable<string> names)
+        {
+            int result = 0;
+            foreach (var name in names)
+                result += SingletonDatabase.Instance.GetPopulation(name);
+            return result;
+        }
+    }
+
     [TestClass]
     public class SingletonTest
     {
@@ -94,9 +105,23 @@ namespace MWM.DesignPatterns.Singleton
         {
             var db = SingletonDatabase.Instance;
             var db2 = SingletonDatabase.Instance;
-            Assert.Equals(db, db2);
-            Assert.Equals(SingletonDatabase.Count, 1);
+            Assert.AreEqual(db, db2);
+            Assert.AreEqual(SingletonDatabase.Count, 1);
         }
+
+        [TestMethod]
+        public void SingletonTotalPopulationTest()
+        {
+            var rf = new SingletonRecordFinder();
+            var names = new[] { "Seoul", "Mexico City" };
+            int tp = rf.GetTotalPopulation(names);
+            // This is an example of a bad idea - here I am dependent on data in a "live" database (granted our pretend one)
+
+            // Problem here is that I cannot get a connection to a pretend database because the Singleton in effect has hard coded a reference to the database
+            // It cannot be tested this way reliably
+            Assert.AreEqual(tp, 17500000 + 17400000);
+        }
+
     }
 
     static class Progranm
