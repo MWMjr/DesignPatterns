@@ -27,6 +27,9 @@ Ensure that a component is created only once
 *When to use*
 When it doesn't make any sense for multiple copies of a class to exist.  For instance, a class that creates objects, or a class that represents a database connection or repository.
 
+*Monstate* Variation
+The properties of a class are statics, which means that all instances of the object will have the same property values.
+
 ## Structural Patterns
 These are the patterns that define new ways to compose objects for new functionality.
 #### Adapter
