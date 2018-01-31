@@ -196,8 +196,7 @@ namespace MWM.DesignPatterns.Singleton
                 var rf = c.Resolve<ConfigurableRecordFinder>();
 
             }
-        }
-
+        }      
     }
 
     static class Progranm
