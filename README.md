@@ -33,6 +33,9 @@ The properties of a class are statics, which means that all instances of the obj
 ## Structural Patterns
 These are the patterns that define new ways to compose objects for new functionality.
 #### Adapter
+*Purpose*
+Get the interface you want from the interface that you have
+
 #### Bridge
 #### Composite
 #### Decorator
