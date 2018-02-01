@@ -34,7 +34,7 @@ The properties of a class are statics, which means that all instances of the obj
 These are the patterns that define new ways to compose objects for new functionality.
 #### Adapter
 *Purpose*
-Get the interface you want from the interface that you have
+Get the interface you want from the interface that you have.  Often referred to as a wrapper.
 
 *When to use*
 When you have a class that can do what you need it to do, but the inputs you have don't fit nicely into it. For instance, having a class that can only draw a point, and asking it to draw a line.  Using an adapter can isolate the code that orchestrates it.
