@@ -41,6 +41,9 @@ When you have a class that can do what you need it to do, but the inputs you hav
 
 #### Bridge
 #### Composite
+*Purpose*
+To treat individual and aggregate object the same.
+
 #### Decorator
 #### Facade
 #### Flywight
