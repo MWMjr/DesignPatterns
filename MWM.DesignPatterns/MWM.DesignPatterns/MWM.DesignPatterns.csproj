@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter\Main.cs" />
+    <Compile Include="Bridge\Main.cs" />
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Builder\LifeWithoutBuilder.cs" />
     <Compile Include="Builder\Main.cs" />

@@ -8,7 +8,7 @@ namespace MWM.DesignPatterns
 {
     class Program
     {
-        static void Main(string[] args)
+        static void MainFactory(string[] args)
         {
             MWM.DesignPatterns.FactoryPattern.Main fp = new FactoryPattern.Main();
             fp.Run();
