@@ -68,6 +68,7 @@
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Builder\LifeWithoutBuilder.cs" />
     <Compile Include="Builder\Main.cs" />
+    <Compile Include="Composite\Main.cs" />
     <Compile Include="FactoryPattern\FileProcessor.cs" />
     <Compile Include="FactoryPattern\FTPProcessor.cs" />
     <Compile Include="FactoryPattern\IProcessor.cs" />

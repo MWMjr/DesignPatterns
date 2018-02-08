@@ -90,4 +90,6 @@ namespace MWM.DesignPatterns.Bridge
 
         }
     }
+
+
 }
