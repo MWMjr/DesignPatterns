@@ -9,7 +9,7 @@ namespace MWM.DesignPatterns.Composite
     //composition lets us make compound objects
     // e.g. a mathmatical lexpression composed of simple expressions
     //      a grouping of shapes that consists of seveeral shapes
-    // Allows us to treat singular objects (scalar) ad composite objects uniformly
+    // Allows us to treat singular objects (scalar) and composite objects uniformly
 
    
     // Root class acts as group
