@@ -53,7 +53,12 @@ When you start start to profilerate classes to deal with different scenarios (i.
 
 #### Composite
 *Purpose*
-To treat individual and aggregate object the same.
+To treat individual and aggregate objects the same.
+
+*When To Use*
+When we have a scalar object (singular) and composite (multiple) objects the same. If we don't code proliferates as we attempt to handle multiple sitations arising from dealing with the different factors of the same object.
+
+Useful is neural networks when everything has to connect to everything.  Solve this by making the scalar object a singular IEnumerable, which allows us to talk to IEnuermable of 1 (scalar) and an Inerumerable of many (composite) the same way.
 
 #### Decorator
 #### Facade
