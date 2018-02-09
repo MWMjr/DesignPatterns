@@ -53,7 +53,7 @@ When you start start to profilerate classes to deal with different scenarios (i.
 
 #### Composite
 *Purpose*
-To treat individual and aggregate object the same.
+To treat individual and aggregate objects the same.
 
 #### Decorator
 #### Facade
