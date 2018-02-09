@@ -36,7 +36,7 @@ namespace MWM.DesignPatterns.Composite
         public override string ToString()
         {
             var sb = new StringBuilder();
-            Print)sb, 0);
+            Print(sb, 0);
             return sb.ToString();
         }
     }
