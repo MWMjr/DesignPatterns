@@ -61,6 +61,8 @@ When we have a scalar object (singular) and composite (multiple) objects the sam
 Useful is neural networks when everything has to connect to everything.  Solve this by making the scalar object a singular IEnumerable, which allows us to talk to IEnuermable of 1 (scalar) and an Inerumerable of many (composite) the same way.
 
 #### Decorator
+*Purpose*
+To add ebhavior without altering the class itself
 #### Facade
 #### Flywight
 #### Proxy
