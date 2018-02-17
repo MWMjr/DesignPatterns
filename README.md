@@ -1,7 +1,7 @@
 # DesignPatterns
 The idea of this repository is to build a library of design patterns implementations built in C#.  This is simply to be used as a personal reference. All code is quick and dirty, and almost all lack a clear entry point - it is just there to demonstrate the principal in code.
 ## Creational Patterns
-These are the patterns that create objects, rather than being instantiated directly.
+These are the patterns that create objects, rather than having them be instantiated directly.
 #### Abstract Factory Pattern
 #### Builder
 *Purpose*
