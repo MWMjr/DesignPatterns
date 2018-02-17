@@ -1,7 +1,7 @@
 # DesignPatterns
-The idea of this repository is to build a library of design patterns implementations built in C#.  This is simply to be used as a personal reference. All code is quick and dirty - just to demonstrate the principal in code.
+The idea of this repository is to build a library of design patterns implementations built in C#.  This is simply to be used as a personal reference. All code is quick and dirty, and almost all lack a clear entry point - it is just there to demonstrate the principal in code.
 ## Creational Patterns
-These are the patterns that create objects, rather than being instantiated directly.
+These are the patterns that create objects, rather than having them be instantiated directly.
 #### Abstract Factory Pattern
 #### Builder
 *Purpose*
@@ -61,6 +61,11 @@ When we have a scalar object (singular) and composite (multiple) objects the sam
 Useful is neural networks when everything has to connect to everything.  Solve this by making the scalar object a singular IEnumerable, which allows us to talk to IEnuermable of 1 (scalar) and an Inerumerable of many (composite) the same way.
 
 #### Decorator
+*Purpose*
+To add ebhavior without altering the class itself.  Facilitates the addition of behaviors to individual objects without inheriting from them
+
+*When To Use*
+When we have an object that we want to augent with additional functionality, but we do not want to rewrite existing code (open/closed principle). This allows us to keep the functionality separate (single respnsibility principle) while interacting with existing structures.  A decorator simply references the decorated objects.
 #### Facade
 #### Flywight
 #### Proxy
