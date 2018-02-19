@@ -379,5 +379,5 @@ namespace MWM.DesignPatterns.Decorator
 
             System.Console.WriteLine(cb);
         }
-    }
+
 }
