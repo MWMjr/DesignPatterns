@@ -66,6 +66,9 @@ To add ebhavior without altering the class itself.  Facilitates the addition of 
 
 *When To Use*
 When we have an object that we want to augent with additional functionality, but we do not want to rewrite existing code (open/closed principle). This allows us to keep the functionality separate (single respnsibility principle) while interacting with existing structures.  A decorator simply references the decorated objects.
+
+This pattern can be used to allow something akin to multiple inheritance, however, the pattern begins to strain easily (i.e. mutliple interfaces with thr same method definition)
+
 #### Facade
 #### Flywight
 #### Proxy
