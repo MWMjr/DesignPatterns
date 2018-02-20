@@ -73,7 +73,7 @@ This pattern can be used to allow something akin to multiple inheritance, howeve
 #### Flywight
 #### Proxy
 ## Behaviorial Patterns
-These patterns are conerned with communication between objects.
+These patterns are concerned with communication between objects.
 #### Chain of Responsibility
 #### Command
 #### Interpreter
