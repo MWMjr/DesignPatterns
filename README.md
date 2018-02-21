@@ -70,6 +70,12 @@ When we have an object that we want to augent with additional functionality, but
 This pattern can be used to allow something akin to multiple inheritance, however, the pattern begins to strain easily (i.e. mutliple interfaces with thr same method definition)
 
 #### Facade
+*Purpose*
+To provide a simplified API over a set of classes/subsystems
+
+*When to use*
+When we have a very complicated subsysten and we want to provide an eaiser way to access its functionality.  By building a facade we can eliminate the complexities
+
 #### Flywight
 #### Proxy
 ## Behaviorial Patterns
