@@ -62,15 +62,24 @@ Useful is neural networks when everything has to connect to everything.  Solve t
 
 #### Decorator
 *Purpose*
-To add ebhavior without altering the class itself.  Facilitates the addition of behaviors to individual objects without inheriting from them.
+To add behavior without altering the class itself.  Facilitates the addition of behaviors to individual objects without inheriting from them.
 
 *When To Use*
 When we have an object that we want to augent with additional functionality, but we do not want to rewrite existing code (open/closed principle). This allows us to keep the functionality separate (single respnsibility principle) while interacting with existing structures.  A decorator simply references the decorated objects.
+
+This pattern can be used to allow something akin to multiple inheritance, however, the pattern begins to strain easily (i.e. mutliple interfaces with thr same method definition)
+
 #### Facade
+*Purpose*
+To provide a simplified API over a set of classes/subsystems
+
+*When to use*
+When we have a very complicated subsysten and we want to provide an eaiser way to access its functionality.  By building a facade we can eliminate the complexities
+
 #### Flywight
 #### Proxy
 ## Behaviorial Patterns
-These patterns are conerned with communication between objects.
+These patterns are concerned with communication between objects.
 #### Chain of Responsibility
 #### Command
 #### Interpreter
