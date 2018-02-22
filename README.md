@@ -76,7 +76,12 @@ To provide a simplified API over a set of classes/subsystems
 *When to use*
 When we have a very complicated subsysten and we want to provide an eaiser way to access its functionality.  By building a facade we can eliminate the complexities
 
-#### Flywight
+#### Flyweight
+*Purpose*
+Eliminate redundancy when storing data
+
+*When to use*
+When you will be storing a lot of similar data - instead of storing the same first name a thousand times, store a pointer to the same data.  Or storing a range of character locations that identifies a formatting choice instead of storing formatting information with each character
 #### Proxy
 ## Behaviorial Patterns
 These patterns are concerned with communication between objects.
